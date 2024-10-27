@@ -1,0 +1,33 @@
+<div class="container-fluid" style="background-color:rgb(69, 154, 174)">
+  <div class="d-flex align-items-center">
+    <!-- Logo de la aplicación -->
+    <img src="assets/tv.png" alt="Logo" class="mr-3" height="50px" width="50px">
+    <h1 class="text-black mb-0">TV Series</h1>
+  </div>
+</div>
+
+<div class="container mt-3">
+  <div class="row">
+    <div class="col-6" style="max-height: 400px; overflow-y: scroll;">
+      <table class="table table-bordered table-striped">
+        <thead class="bg-light">
+          <tr>
+            <th>#</th>
+            <th>Name</th>
+            <th>Channel</th>
+            <th>Seasons</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let serie of series">
+            <td>{{ serie.id }}</td>
+            <td><a [href]="serie.webpage" target="_blank">{{ serie.name }}</a></td>
+            <td>{{ serie.channel }}</td>
+            <td>{{ serie.seasons }}</td>
+          </tr>
+        </tbody>
+      </table>
+      <p>Average Seasons: {{ averageSeasons }}</p>
+    </div>
+  </div>
+</div>
